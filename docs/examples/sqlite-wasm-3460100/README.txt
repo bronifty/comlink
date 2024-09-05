@@ -1,3 +1,7 @@
+```sh
+pnpm i && pnpm start
+```
+
 This is the README for the sqlite3 WASM/JS distribution.
 
 Main project page: https://sqlite.org

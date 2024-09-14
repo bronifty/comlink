@@ -11,28 +11,14 @@
  * limitations under the License.
  */
 
-import { observableInput1, observableInput2, observableTotal, observableTotalPlusOne } from "./store.mjs"
-
 importScripts("https://unpkg.com/comlink/dist/umd/comlink.js");
 // importScripts("../../../dist/umd/comlink.js");
 
-const obj2 = {
-  observableInput1,
-  observableInput2,
-  observableTotal,
+const obj = {
   counter: 0,
   inc() {
-    this.counter = this.counter + 1;
+    this.counter++;
   },
-  incInput1(value) {
-    this.observableInput1.value = this.observableInput1.value + value;
-  },
-  incInput2(value) {
-    this.observableInput2.value = this.observableInput2.value + value;
-  },
-  result3() {
-    return this.observableTotal.value;
-  }
 };
 
-Comlink.expose(obj2);
+Comlink.expose(obj);

@@ -1,14 +1,12 @@
 import * as Comlink from "https://unpkg.com/comlink/dist/esm/comlink.mjs";
-import { input1, input2, result, result2, result3 } from './DOMElements.mjs';
 
-const worker = new Worker("worker.mjs", { type: "module" });
+// Instantiate the worker with type 'module'
+const worker = new Worker("worker2.mjs", { type: "module" });
+    
 const obj = Comlink.wrap(worker);
 
 console.log('workerObj.mjs')
 console.log(await obj.observableInput1.value)
-input1.addEventListener('change', () => {
-  obj.observableInput1.value = input1.value
-})
 
 // result.textContent = "Loading...";
 // result.textContent = await obj.counter;
